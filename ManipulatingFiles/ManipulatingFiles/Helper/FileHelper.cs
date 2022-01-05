@@ -31,5 +31,11 @@ namespace ManipulatingFiles.Helper
                 Console.WriteLine(retorno);
             }
         }
+
+        public void CriarDiretorio(string caminho)
+        {
+            var retorno = Directory.CreateDirectory(caminho);
+            Console.WriteLine(retorno.FullName);
+        }
     }
 }
