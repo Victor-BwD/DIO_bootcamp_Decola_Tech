@@ -37,5 +37,10 @@ namespace ManipulatingFiles.Helper
             var retorno = Directory.CreateDirectory(caminho);
             Console.WriteLine(retorno.FullName);
         }
+
+        public void ApagarDiretorio(string caminho, bool apagarTodosOsArquivos)
+        {
+            Directory.Delete(caminho, apagarTodosOsArquivos);
+        }
     }
 }

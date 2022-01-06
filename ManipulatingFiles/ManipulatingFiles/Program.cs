@@ -10,14 +10,16 @@ namespace ManipulatingFiles
         {
             var caminho = "F:\\TrabalhandoComArquivos";
 
-            var caminhoPathCombine = Path.Combine(caminho, "Pasta Teste 3", "SubPasta Teste 3");
+            //var caminhoPathCombine = Path.Combine(caminho, "Pasta Teste 3", "SubPasta Teste 3");
+            var caminhoDeletePathCombine = Path.Combine(caminho, "Pasta Teste 1");
 
             FileHelper helper = new FileHelper();
 
             helper.ListarDiretorios(caminho);
             helper.ListarArquivosDiretorios(caminho);
-            helper.CriarDiretorio(caminhoPathCombine);
-            Console.WriteLine("Criando diretorio: "+ caminhoPathCombine);
+            //helper.CriarDiretorio(caminhoPathCombine);
+            //Console.WriteLine("Criando diretorio: "+ caminhoPathCombine);
+            helper.ApagarDiretorio(caminhoDeletePathCombine, true);
         }
     }
 }
