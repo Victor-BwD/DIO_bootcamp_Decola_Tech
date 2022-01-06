@@ -19,14 +19,15 @@ namespace ManipulatingFiles
 
             FileHelper helper = new FileHelper();
 
-            helper.ListarDiretorios(caminho);
-            helper.ListarArquivosDiretorios(caminho);
+            //helper.ListarDiretorios(caminho);
+            //helper.ListarArquivosDiretorios(caminho);
             //helper.CriarDiretorio(caminhoPathCombine);
             //Console.WriteLine("Criando diretorio: "+ caminhoPathCombine);
             //helper.ApagarDiretorio(caminhoDeletePathCombine, true);
             //helper.CriarArquivoTexto(caminhoParaCriarArquivo, "Olá, teste de escrita");
-            helper.CriarArquivoTextoStream(caminhoParaCriarArquivo, listaString);
-            helper.AdicionarTextoStream(caminhoParaCriarArquivo, listaStringContinuacao);
+            //helper.CriarArquivoTextoStream(caminhoParaCriarArquivo, listaString);
+            //helper.AdicionarTextoStream(caminhoParaCriarArquivo, listaStringContinuacao);
+            helper.LerArquivoStream(caminhoParaCriarArquivo);
         }
     }
 }

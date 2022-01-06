@@ -91,5 +91,30 @@ namespace ManipulatingFiles.Helper
             }
 
         }
+
+        // ler arquivo sem stream, carregando todo o arquivo de uma vez
+        public void LerArquivo(string caminho)
+        {
+           var conteudo = File.ReadAllLines(caminho);
+
+            foreach (var linha in conteudo)
+            {
+                Console.WriteLine(linha);
+            }
+        }
+
+        // ler atraves de stream, linha por linha inclemental
+        public void LerArquivoStream(string caminho)
+        {
+            string linha = string.Empty;
+
+            using(var stream = File.OpenText(caminho))
+            {
+                while((linha = stream.ReadLine()) != null)
+                {
+                    Console.WriteLine(linha);
+                }
+            }
+        }
     }
 }
