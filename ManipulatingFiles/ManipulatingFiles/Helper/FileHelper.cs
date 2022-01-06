@@ -42,5 +42,14 @@ namespace ManipulatingFiles.Helper
         {
             Directory.Delete(caminho, apagarTodosOsArquivos);
         }
+
+        public void CriarArquivoTexto(string caminho, string conteudo)
+        {
+            if (!File.Exists(caminho)) // se o item não existir, crie
+            {
+                File.WriteAllText(caminho, conteudo);
+            }
+            
+        }
     }
 }
