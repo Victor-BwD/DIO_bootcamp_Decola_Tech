@@ -1,5 +1,6 @@
 ﻿using ManipulatingFiles.Helper;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace ManipulatingFiles
@@ -12,7 +13,8 @@ namespace ManipulatingFiles
 
             //var caminhoPathCombine = Path.Combine(caminho, "Pasta Teste 3", "SubPasta Teste 3");
             var caminhoDeletePathCombine = Path.Combine(caminho, "Pasta Teste 1");
-            var caminhoParaCriarArquivo = Path.Combine(caminho, "arquivo-teste.txt");
+            var caminhoParaCriarArquivo = Path.Combine(caminho, "arquivo-teste-stream.txt");
+            var listaString = new List<string> { "Linha 1", "Linha 2", "Linha 3" };
 
             FileHelper helper = new FileHelper();
 
@@ -21,7 +23,8 @@ namespace ManipulatingFiles
             //helper.CriarDiretorio(caminhoPathCombine);
             //Console.WriteLine("Criando diretorio: "+ caminhoPathCombine);
             //helper.ApagarDiretorio(caminhoDeletePathCombine, true);
-            helper.CriarArquivoTexto(caminhoParaCriarArquivo, "Olá, teste de escrita");
+            //helper.CriarArquivoTexto(caminhoParaCriarArquivo, "Olá, teste de escrita");
+            helper.CriarArquivoTextoStream(caminhoParaCriarArquivo, listaString);
         }
     }
 }

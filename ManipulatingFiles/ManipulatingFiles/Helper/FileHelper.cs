@@ -51,5 +51,18 @@ namespace ManipulatingFiles.Helper
             }
             
         }
+
+        public void CriarArquivoTextoStream(string caminho, List<string> conteudo)
+        {
+            
+
+            using (var stream = File.CreateText(caminho)) {
+                foreach (var linha in conteudo)
+                {
+                    stream.WriteLine(linha);
+                }
+            }
+            
+        }
     }
 }
