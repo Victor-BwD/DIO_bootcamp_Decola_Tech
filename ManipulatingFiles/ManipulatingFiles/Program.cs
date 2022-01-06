@@ -15,6 +15,7 @@ namespace ManipulatingFiles
             var caminhoDeletePathCombine = Path.Combine(caminho, "Pasta Teste 1");
             var caminhoParaCriarArquivo = Path.Combine(caminho, "arquivo-teste-stream.txt");
             var listaString = new List<string> { "Linha 1", "Linha 2", "Linha 3" };
+            var listaStringContinuacao = new List<string> { "Linha 4", "Linha 5", "Linha 6" };
 
             FileHelper helper = new FileHelper();
 
@@ -25,6 +26,7 @@ namespace ManipulatingFiles
             //helper.ApagarDiretorio(caminhoDeletePathCombine, true);
             //helper.CriarArquivoTexto(caminhoParaCriarArquivo, "Olá, teste de escrita");
             helper.CriarArquivoTextoStream(caminhoParaCriarArquivo, listaString);
+            helper.AdicionarTextoStream(caminhoParaCriarArquivo, listaStringContinuacao);
         }
     }
 }

@@ -12,6 +12,7 @@ namespace ManipulatingFiles.Helper
 
     class FileHelper
     {
+        // lista todas as pastas
         public void ListarDiretorios(string caminho)
         {
             var retornoCaminho = Directory.GetDirectories(caminho, "*", SearchOption.AllDirectories);
@@ -22,6 +23,7 @@ namespace ManipulatingFiles.Helper
             }
         }
 
+        // lista as pastas e os arquivos dentro delas
         public void ListarArquivosDiretorios(string caminho)
         {
             var retornoArquivos = Directory.GetFiles(caminho, "*", SearchOption.AllDirectories);
@@ -32,17 +34,20 @@ namespace ManipulatingFiles.Helper
             }
         }
 
+        // cria a pasta
         public void CriarDiretorio(string caminho)
         {
             var retorno = Directory.CreateDirectory(caminho);
             Console.WriteLine(retorno.FullName);
         }
 
+        // deleta a pasta e todos os arquivos
         public void ApagarDiretorio(string caminho, bool apagarTodosOsArquivos)
         {
             Directory.Delete(caminho, apagarTodosOsArquivos);
         }
 
+        // cria um arquivo de texto (recomendado para arquivos pequenos e médios)
         public void CriarArquivoTexto(string caminho, string conteudo)
         {
             if (!File.Exists(caminho)) // se o item não existir, crie
@@ -52,6 +57,7 @@ namespace ManipulatingFiles.Helper
             
         }
 
+        // cria arquivo de texto por partes (recomendado para arquivos grandes)
         public void CriarArquivoTextoStream(string caminho, List<string> conteudo)
         {
             
@@ -63,6 +69,27 @@ namespace ManipulatingFiles.Helper
                 }
             }
             
+        }
+
+        // Adiciona linha em arquivo de texto
+        public void AdicionarTexto(string caminho, string conteudo)
+        {
+            File.AppendAllText(caminho, conteudo);
+        }
+
+        // adiciona linhas em arquivos de texto por stream
+        public void AdicionarTextoStream(string caminho, List<string> conteudo)
+        {
+
+
+            using (var stream = File.AppendText(caminho))
+            {
+                foreach (var linha in conteudo)
+                {
+                    stream.WriteLine(linha);
+                }
+            }
+
         }
     }
 }
